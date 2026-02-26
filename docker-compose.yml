@@ -1,0 +1,47 @@
+services:
+
+  apache-php:
+    build:
+      dockerfile: _docker/php/Dockerfile
+    restart: no
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+      - ./_docker/php/php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mariadb
+    env_file:
+      - ./_docker/.env
+    networks:
+      - app-network
+
+  mariadb:
+    image: mariadb:latest
+    restart: no
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./_docker/mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file:
+      - ./_docker/.env
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: no
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+    env_file:
+      - ./_docker/.env
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mariadb_data:
