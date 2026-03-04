@@ -12,9 +12,12 @@ $grid-breakpoints: (
         xxxl: 1950px,
 );
 
-
 // 2. Include any default variable overrides here
 $link-decoration: none;
+$primary: #1A2C5D;
+$secondary: #0F1933;
+$black: #121212;
+$white: #F9FEFF;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
@@ -30,3 +33,10 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrapComponents";
 
 // 5. Du kan lave styling her...
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: $secondary;
+}
