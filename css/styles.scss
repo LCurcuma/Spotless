@@ -1,6 +1,18 @@
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
 
+//Bootstrap breakpoints, men custom breakpoint
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+        xxxl: 1950px,
+);
+
+
 // 2. Include any default variable overrides here
 $link-decoration: none;
 
