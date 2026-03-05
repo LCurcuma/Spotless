@@ -169,6 +169,39 @@ $firstTime = date("H:i", strtotime($firstDate));
         <img src="img/background-abstract.png" class="backgroundimg2" alt="Background image">
     </div>
 
+    <div class="cleaning-overview">
+        <h2>Rengørings oversigt</h2>
+
+       <div class="clean-row">
+            <div class="history-list">
+                <?php
+                $latestHistory = array_slice($history, 0, 3);
+                foreach($latestHistory as $entry) {
+                    $workerName = "Ukendt";
+                    foreach($workers as $worker) {
+                        if($worker->id == $entry->workerId) {
+                            $workerName = $worker->name;
+                            break;
+                        }
+                    }
+
+                    $entryDato = date("d.m", strtotime($entry->date));
+                    $entryTid = date("H:i", strtotime($entry->date));
+                    ?>
+
+                    <div class="history-item d-flex justify-content-between align-items-center mb-3">
+                        <span class="history-time"><?php echo $entryTid; ?></span>
+                        <span class="history-name"><?php echo $workerName; ?></span>
+                        <span class="history-date"><?php echo $entryDato; ?></span>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="oversigt.php" class="history-btn">Historik</a>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
