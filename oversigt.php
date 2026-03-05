@@ -4,17 +4,6 @@
  */
 
 require "settings/init.php";
-
-// Vi skal hente data fra History og koble det sammen med Workers navne
-// Vi bruger JOIN ligesom du brugte LEFT JOIN i dit eksempel
-$sql = "
-    SELECT History.*, Workers.name
-    FROM History
-    INNER JOIN Workers ON History.workerId = Workers.id
-    ORDER BY History.date DESC
-";
-
-$historyEntries = $db->sql($sql);
 ?>
 
 <!DOCTYPE html>
