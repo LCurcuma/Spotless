@@ -246,7 +246,7 @@ body {
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(lg){
-    left: 88px;
+    left: 78px;
     rotate: 8deg;
     height: 380px;
     width: 90%;
@@ -283,7 +283,7 @@ body {
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(lg){
-    left: 88px;
+    left: 78px;
     rotate: -10deg;
     height: 380px;
     width: 90%;
@@ -313,7 +313,7 @@ body {
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(lg){
-    left: 320px;
+    left: 300px;
     top: 320px;
     transition: 0.2s ease-in-out;
   }
