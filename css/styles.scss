@@ -170,7 +170,64 @@ body {
   }
 }
 
+.modal-dialog{
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+  max-width: none;
+ }
+
+.custom-modal{
+  border-radius: 25px;
+  border: none;
+  background: $white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  width: 100%;
+  z-index: 9999;
+
+  .modal-header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 15px 0 0;
+  }
+
+  .btn-close{
+    background-color: transparent;
+    filter:invert(7%) sepia(87%) saturate(2855%) hue-rotate(213deg) brightness(91%) contrast(106%);
+    border-radius: 50%;
+    opacity: 1;
+    margin: 15px 15px 0 0;
+
+    &:hover{
+    opacity: 0.8;
+    }
+  }
+}
+
+.modal-body i{
+  color: #051933;
+}
+
+.contact-row{
+  color: #051933;
+}
+
+i{
+  color: #051933;
+  font-size: 2.5rem;
+}
+
+span{
+  color: #051933;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+
 .kontaktknap{
+  position: relative;
   border-radius: 30px;
   padding: 4px 15px;
   letter-spacing: 1px;
@@ -178,6 +235,7 @@ body {
   margin-top: 20px;
   margin-right: 20px;
   font-family: 'Roboto', sans-serif;
+  z-index: 100;
 
   @include media-breakpoint-up(sm){
     font-size: 20px;
