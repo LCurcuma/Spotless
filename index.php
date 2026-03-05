@@ -92,11 +92,11 @@ $firstTime = date("H:i", strtotime($firstDate));
                         <div class="mb-3 d-flex flex-row">
                             <div class="mb-3">
                                 <label for="date">Date</label>
-                                <input type="date" class="form-control" id="date" name="date" value="<?php echo $today; ?>">
+                                <input type="date" class="form-control tidspunkt" id="date" name="date" value="<?php echo $today; ?>">
                             </div>
                             <div class="mb-3 ms-auto">
                                 <label for="tidspunkt">Tidspunkt</label>
-                                <input type="time" class="form-control" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
+                                <input type="time" class="form-control tidspunkt" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
                             </div>
                         </div>
                         <div class="mb-3">
