@@ -23,7 +23,27 @@ require "settings/init.php";
 
 <body>
 
-<h1>Det virker 🥳</h1>
+<div class="background">
+    <img src="img/background-abstract.png" class="backgroundimg">
+    <img src="img/background-abstract.png" class="backgroundimg2">
+</div>
+
+<div class="logo">
+    <img src="img/logo.png" class="logoimg">
+</div>
+
+<div class="col text-end">
+    <a href="">
+        <button class="btn btn-primary kontaktknap"> KONTAKT </button>
+    </a>
+</div>
+
+
+
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
