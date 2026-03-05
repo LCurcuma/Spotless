@@ -32,10 +32,30 @@ require "settings/init.php";
     <img src="img/logo.png" class="logoimg">
 </div>
 
-<div class="col text-end">
+<div class="text-end">
     <a href="">
         <button class="btn btn-primary kontaktknap"> KONTAKT </button>
     </a>
+</div>
+
+
+<div class="toilet">
+    <div class="toiletrengjort text-center text-light">
+        <p class="teksttoilet">Dette toilet blev rengjort</p>
+        <div class="tid">
+            kl.
+            <span id="cleanTime">--:--</span>
+        </div>
+        <div class="dato" id="cleanDate">
+            --.--.----
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="cirkel1"></div>
+    <div class="cirkel2"></div>
 </div>
 
 
@@ -45,6 +65,24 @@ require "settings/init.php";
 
 
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const cleanTime = document.querySelector('#cleanTime');
+    const cleanDate = document.querySelector('#cleanDate');
+
+
+    saveCleanBtn.addEventListener('click', () => {
+
+        const cleanTimeInput = document.querySelector('#cleanTimeInput');
+        const cleanDateInput = document.querySelector('#cleanDateInput');
+        cleanTime.innerHTML = cleanTimeInput.value;
+        cleanDate.innerHTML = cleanDateInput.value;
+
+    }
+
+
+</script>
 </body>
 </html>

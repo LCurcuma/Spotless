@@ -44,7 +44,7 @@ body {
 
 
 .background{
-  z-index: 1;
+  z-index: -1;
   position: absolute;
   inset: 0;
   overflow-x: hidden;
@@ -63,24 +63,28 @@ body {
     width: 1200px;
     left: -410px;
     top: 80px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up (md){
     width: 1300px;
     left: -250px;
     top: 100px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up (mg){
     width: 1450px;
     left: -300px;
     top: 100px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up (lg){
     width: 1500px;
     left: -220px;
     top: 100px;
+    transition: 0.2s ease-in-out;
   }
 
 }
@@ -96,24 +100,28 @@ body {
     width: 1100px;
     left: -540px;
     top: 650px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up (md){
     width: 1300px;
     left: -600px;
     top: 820px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up (mg){
     width: 1450px;
     left: -600px;
     top: 940px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up (lg){
     width: 1500px;
     left: -600px;
     top: 940px;
+    transition: 0.2s ease-in-out;
   }
 
 }
@@ -136,59 +144,245 @@ body {
     width: 50px;
     top: 30px;
     left: 30px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(md){
     width: 55px;
     top: 35px;
     left: 35px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(mg){
     width: 60px;
     top: 40px;
     left: 40px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(lg){
     width: 70px;
     top: 50px;
     left: 50px;
+    transition: 0.2s ease-in-out;
   }
 }
 
 .kontaktknap{
   border-radius: 30px;
-  padding: 5px 40px;
+  padding: 4px 15px;
   letter-spacing: 1px;
-  font-size: 17px;
+  font-size: 18px;
   margin-top: 20px;
   margin-right: 20px;
+  font-family: 'Roboto', sans-serif;
 
   @include media-breakpoint-up(sm){
     font-size: 20px;
     margin-top: 40px;
     margin-right: 40px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(md){
     font-size: 23px;
     margin-top: 45px;
     margin-right: 45px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(mg){
     font-size: 25px;
     margin-top: 50px;
     margin-right: 50px;
+    transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(lg){
     font-size: 27px;
     margin-top: 58px;
     margin-right: 55px;
+    transition: 0.2s ease-in-out;
   }
-
 
 }
 
+.container{
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 350px;
+  z-index: 3;
+}
+
+.cirkel1{
+  width: 85%;
+  height: 260px;
+  top: 130px;
+  left: 30px;
+  rotate: 10deg;
+  background: $primary;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 65%;
+
+  @include media-breakpoint-up(sm){
+    left: 58px;
+    rotate: 8deg;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(md){
+    left: 68px;
+    rotate: 8deg;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(mg){
+    left: 90px;
+    rotate: 8deg;
+    height: 300px;
+    width: 90%;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(lg){
+    left: 88px;
+    rotate: 8deg;
+    height: 380px;
+    width: 90%;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.cirkel2{
+  width: 85%;
+  height: 260px;
+  top: 130px;
+  left: 30px;
+  rotate: -25deg;
+  background: $primary;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 65%;
+
+  @include media-breakpoint-up(sm){
+    left: 58px;
+    rotate: -20deg;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(md){
+    left: 68px;
+    rotate: -15deg;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(mg){
+    left: 90px;
+    rotate: -10deg;
+    height: 300px;
+    width: 90%;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(lg){
+    left: 88px;
+    rotate: -10deg;
+    height: 380px;
+    width: 90%;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.toilet{
+  z-index: 4;
+  position: absolute;
+  top: 270px;
+  left: 90px;
+
+  @include media-breakpoint-up(sm){
+    left: 160px;
+    top: 285px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(md){
+    left: 230px;
+    top: 285px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(mg){
+    left: 240px;
+    top: 295px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(lg){
+    left: 320px;
+    top: 320px;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.teksttoilet{
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 3px;
+  font-weight: 1000;
+
+  @include media-breakpoint-up(sm){
+    font-size: 25px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(md){
+    font-size: 30px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(mg){
+    font-size: 34px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(lg){
+    font-size: 40px;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.tid{
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+
+  @include media-breakpoint-up(sm){
+    font-size: 45px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(md){
+    font-size: 50px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(mg){
+    font-size: 55px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(lg){
+    font-size: 65px;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+.dato{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+  @include media-breakpoint-up(sm){
+    font-size: 21px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(md){
+    font-size: 26px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(mg){
+    font-size: 31px;
+    transition: 0.2s ease-in-out;
+  }
+  @include media-breakpoint-up(lg){
+    font-size: 38px;
+    transition: 0.2s ease-in-out;
+  }
+}
