@@ -38,7 +38,7 @@ $firstTime = date("H:i", strtotime($firstDate));
     <i class="fa-solid fa-user userIcon" style="color: rgb(255, 255, 255);" data-bs-target="#loginModal" data-bs-toggle="modal"></i>
 
 <nav>
-<img src="img/logo.png" class="logoimg">
+<img src="img/logo.png" class="logoimg" alt="Spotless logo">
 
 <div class="text-end">
     <button class="btn btn-primary kontaktknap" data-bs-toggle="modal" data-bs-target="#kontaktModal">
@@ -165,8 +165,8 @@ $firstTime = date("H:i", strtotime($firstDate));
     </div>
 
     <div class="background">
-        <img src="img/background-abstract.png" class="backgroundimg">
-        <img src="img/background-abstract.png" class="backgroundimg2">
+        <img src="img/background-abstract.png" class="backgroundimg" alt="Background image">
+        <img src="img/background-abstract.png" class="backgroundimg2" alt="Background image">
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
