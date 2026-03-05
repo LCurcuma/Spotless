@@ -75,7 +75,7 @@ $firstTime = date("H:i", strtotime($firstDate));
         <p class="teksttoilet">Dette toilet blev rengjort</p>
         <div class="tid">
             kl.
-            <span id="cleanTime"><?php echo $firstTime?></span>
+            <span id="cleanTime" class="tid text-white"><?php echo $firstTime?></span>
         </div>
         <div class="dato" id="cleanDate">
             <?php echo $firstDato?>
@@ -86,9 +86,9 @@ $firstTime = date("H:i", strtotime($firstDate));
 
     <div class="modal fade" id="loginModal" aria-hidden="true" aria-labelledby="loginModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content custom-modal">
                 <div class="modal-header">
-                    <label for="login" class="modal-title fs-5" id="loginLabel">Login</label>
+                    <label for="login" class="modal-title fs-3 me-auto ms-4" id="loginLabel">Login</label>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -104,32 +104,32 @@ $firstTime = date("H:i", strtotime($firstDate));
     <form action="index.php" method="post">
         <div class="modal fade" id="insertForm" aria-hidden="true" aria-labelledby="insertForm" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content custom-modal">
                     <div class="modal-header">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="medarbejder">Medarbejder</label>
-                            <input type="text" class="form-control" id="medarbejder" name="medarbejder" value="Maria Hansen">
+                            <label for="medarbejder" class="fs-4">Medarbejder</label>
+                            <input type="text" class="form-control fs-4" id="medarbejder" name="medarbejder" value="Maria Hansen">
                         </div>
                         <div class="mb-3 d-flex flex-row">
                             <div class="mb-3">
-                                <label for="date">Date</label>
-                                <input type="date" class="form-control tidspunkt" id="date" name="date" value="<?php echo $today; ?>">
+                                <label for="date" class="fs-4">Date</label>
+                                <input type="date" class="form-control tidspunkt fs-4" id="date" name="date" value="<?php echo $today; ?>">
                             </div>
                             <div class="mb-3 ms-auto">
-                                <label for="tidspunkt">Tidspunkt</label>
-                                <input type="time" class="form-control tidspunkt" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
+                                <label for="tidspunkt" class="fs-4">Tidspunkt</label>
+                                <input type="time" class="form-control tidspunkt fs-4" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="andet">Evt. bemærkninger</label>
-                            <input type="text" class="form-control" id="andet" name="andet">
+                            <label for="andet" class="fs-4">Evt. bemærkninger</label>
+                            <input type="text" class="form-control fs-4" id="andet" name="andet">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#inertForm" data-bs-dismiss="modal" id="saveCleanBtn">INDSEND</button>
+                        <button class="btn btn-primary submitBTN" data-bs-target="#inertForm" data-bs-dismiss="modal" id="saveCleanBtn">INDSEND</button>
                     </div>
                 </div>
             </div>
@@ -155,10 +155,9 @@ $firstTime = date("H:i", strtotime($firstDate));
                 ":date" => $_POST['date']." ".$_POST['tidspunkt']
             ];
             $db->sql($sqlInsert, $bindsInsert);
-            echo "<div class='bg-light d-flex flex-column justify-content-center align-items-center goodJob'><p>Godt arbejde!</p><a href='index.php' class='btn btn-primary'>Tak :)</a></div>";
+            echo "<div class='bg-light d-flex flex-column justify-content-center align-items-center goodJob'><p>Godt arbejde!</p><a href='index.php' class='btn btn-primary takBTN'>Tak :)</a></div>";
         }
     ?>
-
 
     <div class="container">
         <div class="cirkel1"></div>
@@ -169,8 +168,6 @@ $firstTime = date("H:i", strtotime($firstDate));
         <img src="img/background-abstract.png" class="backgroundimg">
         <img src="img/background-abstract.png" class="backgroundimg2">
     </div>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

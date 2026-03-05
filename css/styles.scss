@@ -476,3 +476,26 @@ span{
 .tidspunkt{
   width: 20vw;
 }
+
+.modal-dialog{
+  width: 70vw;
+  margin: auto;
+}
+
+.modal-content{
+  border-radius: 25px;
+  padding: 0 20px;
+}
+
+.submitBTN{
+  width: 100%;
+  font-size: 24px;
+}
+
+.takBTN{
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
