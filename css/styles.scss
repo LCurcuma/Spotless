@@ -40,7 +40,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   background: $secondary;
-
+  min-height: 100vh;
 }
 
 
@@ -50,15 +50,18 @@ body {
   inset: 0;
   overflow-x: hidden;
   overflow-y: hidden;
+  pointer-events: none;
 }
 
 .backgroundimg{
+  z-index: -1;
   rotate: 50deg;
   width: 1000px;
   left: -370px;
   top: 80px;
   position: absolute;
   filter: blur(5px);
+  pointer-events: none;
 
   @include media-breakpoint-up (sm){
     width: 1200px;
@@ -96,6 +99,7 @@ body {
   top: 650px;
   position: absolute;
   filter: blur(5px);
+  pointer-events: none;
 
   @include media-breakpoint-up (sm){
     width: 1100px;
@@ -127,19 +131,15 @@ body {
 
 }
 
-.logo{
-  z-index: 2;
-  position: absolute;
-  inset: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .logoimg{
   width: 40px;
   top: 20px;
   left: 20px;
   position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   @include media-breakpoint-up(sm){
     width: 50px;
@@ -170,7 +170,99 @@ body {
   }
 }
 
+.modal-dialog{
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 1rem);
+  max-width: none;
+
+  @include media-breakpoint-up(sm) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px; // Her begynder vi at låse bredden
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 500px;
+  }
+
+  @include media-breakpoint-up(mg) {
+    max-width: 550px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 600px;
+  }
+}
+
+.custom-modal{
+  border-radius: 25px;
+  border: none;
+  background: $white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  width: 100%;
+  z-index: 9999;
+
+  .modal-header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 15px 0 0;
+  }
+
+  .btn-close{
+    background-color: transparent;
+    filter:invert(7%) sepia(87%) saturate(2855%) hue-rotate(213deg) brightness(91%) contrast(106%);
+    border-radius: 50%;
+    opacity: 1;
+    margin: 15px 15px 0 0;
+
+    &:hover{
+    opacity: 0.8;
+    }
+  }
+}
+
+.modal-body i{
+  color: #051933;
+
+  @include media-breakpoint-up(sm){
+    padding: 20px 40px 50px 40px;
+  }
+}
+
+.contact-row{
+  color: #051933;
+
+  @include media-breakpoint-up(sm){
+    margin-bottom: 25px;
+  }
+}
+
+i{
+  color: #051933;
+  font-size: 2.5rem;
+
+  @include media-breakpoint-up(sm){
+    font-size: 2.5rem;
+  }
+}
+
+span{
+  color: #051933;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+
+  @include media-breakpoint-up(sm){
+    font-size: 1.2rem;
+    margin-left: 25px;
+  }
+}
+
 .kontaktknap{
+  position: relative;
   border-radius: 30px;
   padding: 4px 15px;
   letter-spacing: 1px;
@@ -178,6 +270,7 @@ body {
   margin-top: 20px;
   margin-right: 20px;
   font-family: 'Roboto', sans-serif;
+  z-index: 100;
 
   @include media-breakpoint-up(sm){
     font-size: 20px;
@@ -212,14 +305,14 @@ body {
 .container{
   position: absolute;
   margin: auto;
-  width: 100%;
+  min-width: 100vw;
   height: 350px;
-  z-index: 3;
+  z-index: 1;
 }
 
 .cirkel1{
   width: 85%;
-  height: 260px;
+  height: 100%;
   top: 130px;
   left: 30px;
   rotate: 10deg;
@@ -227,6 +320,7 @@ body {
   border-radius: 50%;
   position: absolute;
   opacity: 65%;
+  pointer-events: none;
 
   @include media-breakpoint-up(sm){
     left: 58px;
@@ -256,7 +350,7 @@ body {
 
 .cirkel2{
   width: 85%;
-  height: 260px;
+  height: 100%;
   top: 130px;
   left: 30px;
   rotate: -25deg;
@@ -264,6 +358,7 @@ body {
   border-radius: 50%;
   position: absolute;
   opacity: 65%;
+  pointer-events: none;
 
   @include media-breakpoint-up(sm){
     left: 58px;
@@ -295,25 +390,21 @@ body {
   z-index: 4;
   position: absolute;
   top: 270px;
-  left: 90px;
+  width: 100%;
 
   @include media-breakpoint-up(sm){
-    left: 160px;
     top: 285px;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(md){
-    left: 230px;
     top: 285px;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(mg){
-    left: 240px;
     top: 295px;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(lg){
-    left: 300px;
     top: 320px;
     transition: 0.2s ease-in-out;
   }
@@ -386,4 +477,60 @@ body {
     font-size: 38px;
     transition: 0.2s ease-in-out;
   }
+}
+
+
+.userIcon{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 50px;
+  opacity: 10%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.toiletrengjort{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goodJob{
+  position: absolute;
+  top: 33vh;
+  left: 33vw;
+  width: 350px;
+  height: 250px;
+  z-index: 200;
+  border-radius: 20px;
+  font-size: 25px;
+}
+
+.tidspunkt{
+  width: 20vw;
+}
+
+.modal-dialog{
+  width: 70vw;
+  margin: auto;
+}
+
+.modal-content{
+  border-radius: 25px;
+  padding: 0 20px;
+}
+
+.submitBTN{
+  width: 100%;
+  font-size: 24px;
+}
+
+.takBTN{
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
