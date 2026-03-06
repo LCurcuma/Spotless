@@ -126,7 +126,7 @@ $firstTime = date("H:i", strtotime($firstDate));
                         </div>
                         <div class="mb-3">
                             <label for="andet" class="fs-6 fs-md-4">Evt. bemærkninger</label>
-                            <input type="text" class="form-control fs-4" id="andet" name="andet">
+                            <input type="text" class="form-control fs-6 fs-md-4" id="andet" name="andet">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -142,7 +142,7 @@ $firstTime = date("H:i", strtotime($firstDate));
         $workers = $db->sql($sqlWorkers);
 
         if(!empty($_POST)){
-            $sqlInsert = "INSERT INTO History (workerId, toiletId, date) VALUES (:workerId, :toiletId, :date)";
+            $sqlInsert = "INSERT INTO History (workerId, toiletId, date, remarks) VALUES (:workerId, :toiletId, :date, :remarks)";
             $workerID = null;
 
             foreach($workers as $worker){
@@ -153,7 +153,8 @@ $firstTime = date("H:i", strtotime($firstDate));
             $bindsInsert = [
                     ":workerId" => $workerID,
                 ":toiletId" => "2",
-                ":date" => $_POST['date']." ".$_POST['tidspunkt']
+                ":date" => $_POST['date']." ".$_POST['tidspunkt'],
+                ":remarks" => $_POST['andet']
             ];
             $db->sql($sqlInsert, $bindsInsert);
             echo "<div class='bg-light d-flex flex-column justify-content-center align-items-center goodJob'><p>Godt arbejde!</p><a href='index.php' class='btn btn-primary takBTN'>Tak :)</a></div>";
