@@ -387,14 +387,14 @@ span{
   }
   @include media-breakpoint-up(md){
     left: 40px;
-    top: 0px;
+    top: 0;
     rotate: -15deg;
     height: 100%;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(mg){
     left: 40px;
-    top: 0px;
+    top: 0;
     rotate: -15deg;
     height: 100%;
     width: 90%;
@@ -402,7 +402,7 @@ span{
   }
   @include media-breakpoint-up(lg){
     left: 40px;
-    top: 0px;
+    top: 0;
     rotate: -15deg;
     height: 100%;
     width: 90%;
