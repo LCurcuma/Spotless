@@ -89,7 +89,7 @@ $firstTime = date("H:i", strtotime($firstDate));
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content custom-modal">
                 <div class="modal-header">
-                    <label for="login" class="modal-title fs-3 me-auto ms-4" id="loginLabel">Login</label>
+                    <label for="login" class="modal-title fs-5 fs-md-3 me-auto ms-4" id="loginLabel">Login</label>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -111,21 +111,21 @@ $firstTime = date("H:i", strtotime($firstDate));
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="medarbejder" class="fs-4">Medarbejder</label>
-                            <input type="text" class="form-control fs-4" id="medarbejder" name="medarbejder" value="Maria Hansen">
+                            <label for="medarbejder" class="fs-6 fs-md-4">Medarbejder</label>
+                            <input type="text" class="form-control fs-6 fs-md-4" id="medarbejder" name="medarbejder" value="Maria Hansen">
                         </div>
                         <div class="mb-3 d-flex flex-row">
                             <div class="mb-3">
-                                <label for="date" class="fs-4">Date</label>
-                                <input type="date" class="form-control tidspunkt fs-4" id="date" name="date" value="<?php echo $today; ?>">
+                                <label for="date" class="fs-6 fs-md-4">Date</label>
+                                <input type="date" class="form-control tidspunkt fs-6 fs-md-4" id="date" name="date" value="<?php echo $today; ?>">
                             </div>
                             <div class="mb-3 ms-auto">
-                                <label for="tidspunkt" class="fs-4">Tidspunkt</label>
-                                <input type="time" class="form-control tidspunkt fs-4" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
+                                <label for="tidspunkt" class="fs-6 fs-md-4">Tidspunkt</label>
+                                <input type="time" class="form-control tidspunkt fs-6 fs-md-4" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="andet" class="fs-4">Evt. bemærkninger</label>
+                            <label for="andet" class="fs-6 fs-md-4">Evt. bemærkninger</label>
                             <input type="text" class="form-control fs-4" id="andet" name="andet">
                         </div>
                     </div>
