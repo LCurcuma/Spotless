@@ -41,13 +41,13 @@ $historyEntries = $db->sql($sql);
     <img src="img/background-abstract.png" class="backgroundimg2" alt="Abstract background img">
 </div>
 
-<div class="logo">
+<div class="navigation">
     <a href="index.php">
         <img src="img/logo.png" class="logoimg" alt="Logo">
     </a>
 </div>
 
-<div class="container px-5 ">
+<div class="containerHistory px-5">
 
     <!-- Overskrift -->
     <div class="text-center mt-5 text-white">
@@ -56,6 +56,8 @@ $historyEntries = $db->sql($sql);
 
     <!-- Årstal i toppen -->
     <div class="mb-2 fs-3 text-white">2026</div>
+
+    <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
 
     <?php
 
@@ -68,7 +70,7 @@ $historyEntries = $db->sql($sql);
         $dato = date("d.m", strtotime($entry->date));
         ?>
 
-        <div class="d-flex justify-space-between align-items-center text-white bg-primary rounded-3 p-3 mb-3 fs-2" >
+        <div class="d-flex flex-row justify-space-between align-items-center text-white bg-primary rounded-3 p-3 mb-3 fs-2 w-100" >
             <!-- Viser tidspunkt -->
             <div><?php echo $tid; ?></div>
 
@@ -83,6 +85,7 @@ $historyEntries = $db->sql($sql);
     }
     ?>
 
+    </div>
     <!-- Tilbage knap -->
     <div class="text-center mt-4">
         <a href="index.php" class="btn btn-light fs-3 rounded-5 px-5">Tilbage</a>

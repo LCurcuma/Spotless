@@ -677,3 +677,10 @@ span{
   margin-left: 25px;
   margin-right: 25px;
 }
+
+.containerHistory{
+  display: flex;
+  flex-direction: column;
+  margin-top: -100px;
+  width: 100%;
+}
