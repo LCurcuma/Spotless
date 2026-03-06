@@ -46,11 +46,11 @@ $historyEntries = $db->sql($sql);
 </div>
 
 
-<div class="container mt-50">
+<div class="container px-5 ">
 
     <!-- Overskrift -->
     <div class="text-center mt-5 text-white">
-        <h1 class="fs-23">Historik</h1>
+        <h1 class="fs-23 mt-150">Historik</h1>
     </div>
 
     <!-- Årstal i toppen -->
