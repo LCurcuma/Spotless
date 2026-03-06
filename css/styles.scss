@@ -35,12 +35,19 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // 5. Du kan lave styling her...
 
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   box-sizing: border-box;
   background: $secondary;
   min-height: 100vh;
+  padding-bottom: 100px;
 }
 
 
@@ -133,9 +140,11 @@ body {
 
 .logoimg{
   width: 40px;
+  /*
   top: 20px;
   left: 20px;
   position: absolute;
+   */
   z-index: 2;
   inset: 0;
   overflow-x: hidden;
@@ -143,29 +152,21 @@ body {
 
   @include media-breakpoint-up(sm){
     width: 50px;
-    top: 30px;
-    left: 30px;
     transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(md){
     width: 55px;
-    top: 35px;
-    left: 35px;
     transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(mg){
     width: 60px;
-    top: 40px;
-    left: 40px;
     transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(lg){
     width: 70px;
-    top: 50px;
-    left: 50px;
     transition: 0.2s ease-in-out;
   }
 }
@@ -267,37 +268,38 @@ span{
   padding: 4px 15px;
   letter-spacing: 1px;
   font-size: 18px;
-  margin-top: 20px;
-  margin-right: 20px;
+  margin-left: auto;
+  //margin-top: 20px;
+  //margin-right: 20px;
   font-family: 'Roboto', sans-serif;
   z-index: 100;
   font-weight: bold;
 
   @include media-breakpoint-up(sm){
     font-size: 20px;
-    margin-top: 40px;
-    margin-right: 40px;
+    //margin-top: 40px;
+    //margin-right: 40px;
     transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(md){
     font-size: 23px;
-    margin-top: 45px;
-    margin-right: 45px;
+    //margin-top: 45px;
+    //margin-right: 45px;
     transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(mg){
     font-size: 25px;
-    margin-top: 50px;
-    margin-right: 50px;
+    //margin-top: 50px;
+    //margin-right: 50px;
     transition: 0.2s ease-in-out;
   }
 
   @include media-breakpoint-up(lg){
     font-size: 27px;
-    margin-top: 58px;
-    margin-right: 55px;
+    //margin-top: 58px;
+    //margin-right: 55px;
     transition: 0.2s ease-in-out;
   }
 
@@ -316,17 +318,18 @@ span{
 
 .container{
   position: absolute;
-  margin: auto;
-  min-width: 100vw;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
   height: 350px;
   z-index: 1;
 }
 
 .cirkel1{
-  width: 85%;
-  height: 100%;
-  top: 130px;
-  left: 30px;
+  width: 90%;
+  height: 70%;
   rotate: 10deg;
   background: $primary;
   border-radius: 50%;
@@ -335,35 +338,28 @@ span{
   pointer-events: none;
 
   @include media-breakpoint-up(sm){
-    left: 58px;
-    rotate: 8deg;
+    rotate: 10deg;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(md){
-    left: 68px;
     rotate: 8deg;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(mg){
-    left: 90px;
-    rotate: 8deg;
-    height: 300px;
-    width: 90%;
+    rotate: 10deg;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(lg){
-    left: 78px;
-    rotate: 8deg;
-    height: 380px;
+    rotate: 10deg;
     width: 90%;
     transition: 0.2s ease-in-out;
   }
 }
 
 .cirkel2{
-  width: 85%;
-  height: 100%;
-  top: 130px;
+  width: 90%;
+  height: 70%;
+  top: 60px;
   left: 30px;
   rotate: -25deg;
   background: $primary;
@@ -374,25 +370,23 @@ span{
 
   @include media-breakpoint-up(sm){
     left: 58px;
-    rotate: -20deg;
+    rotate: -25deg;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(md){
     left: 68px;
-    rotate: -15deg;
+    rotate: -25deg;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(mg){
     left: 90px;
-    rotate: -10deg;
-    height: 300px;
+    rotate: -25deg;
     width: 90%;
     transition: 0.2s ease-in-out;
   }
   @include media-breakpoint-up(lg){
     left: 78px;
-    rotate: -10deg;
-    height: 380px;
+    rotate: -25deg;
     width: 90%;
     transition: 0.2s ease-in-out;
   }
@@ -577,35 +571,42 @@ span{
   font-weight: bold;
 }
 
+.link_btn{
+  display: flex;
+  justify-content: center;
+}
+
 .history-btn{
-  display: inline-block;
+  display: block;
   margin-top: 25px;
   padding: 15px 35px;
   background: $primary;
   color: white;
   border-radius: 30px;
   text-decoration: none;
-  margin-left:305px;
+  /*margin-left:305px;*/
+  text-align: center;
 
   font-weight: bold;
   font-size: 1.1rem;
   transition: transform 0.2s ease;
 
   @include media-breakpoint-up(sm){
-    margin-left: 225px;
+    //margin-left: 225px;
   }
 
   @include media-breakpoint-up(md) {
     font-size: 1.3rem;
     padding: 12px 50px;
-    margin-left: 305px;
+    //margin-left: 305px;
   }
 
   @include media-breakpoint-up(mg){
-  margin-left: 335px;}
+  //margin-left: 335px;
+    }
 
   @include media-breakpoint-up(lg){
-    margin-left: 400px;
+    //margin-left: 400px;
   }
 
   &:hover {
@@ -667,4 +668,12 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navigation{
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
 }

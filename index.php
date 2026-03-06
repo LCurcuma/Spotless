@@ -38,10 +38,10 @@ $firstTime = date("H:i", strtotime($firstDate));
 <body>
     <i class="fa-solid fa-user userIcon" style="color: rgb(255, 255, 255);" data-bs-target="#loginModal" data-bs-toggle="modal"></i>
 
-<nav>
+<nav class="navigation">
 <img src="img/logo.png" class="logoimg" alt="Spotless logo">
 
-<div class="text-end">
+<div class="text-end ms-auto">
     <button class="btn btn-primary kontaktknap" data-bs-toggle="modal" data-bs-target="#kontaktModal">
             KONTAKT
     </button>
@@ -200,8 +200,9 @@ $firstTime = date("H:i", strtotime($firstDate));
         </div>
 
     </div>
-
+    <div class="link_btn">
     <a href="oversigt.php" class="history-btn">Historik</a>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
