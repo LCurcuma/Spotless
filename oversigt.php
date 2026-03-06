@@ -51,11 +51,11 @@ $historyEntries = $db->sql($sql);
 
     <!-- Overskrift -->
     <div class="text-center mt-5 text-white">
-        <h1 class="fs-23 mt-150">Historik</h1>
+        <h1 class="fs-23 mt-150 fw-bold">Historik</h1>
     </div>
 
     <!-- Årstal i toppen -->
-    <div class="mb-2 fs-3 text-white">2026</div>
+    <div class="ms-3 mb-2 fs-3 text-white">2026</div>
 
     <div class="d-flex flex-column gap-3 justify-content-center align-items-center">
 
@@ -72,13 +72,13 @@ $historyEntries = $db->sql($sql);
 
         <div class="d-flex flex-row justify-space-between align-items-center text-white bg-primary rounded-3 p-3 mb-3 fs-2 w-100" >
             <!-- Viser tidspunkt -->
-            <div><?php echo $tid; ?></div>
+            <div class="ps-2">Kl: <?php echo $tid; ?></div>
 
             <!-- Viser medarbejderens navn -->
             <div class="flex-grow-1 px-5"><?php echo $entry->name; ?></div>
 
             <!-- Viser dato -->
-            <div><?php echo $dato; ?></div>
+            <div class="pe-2"><?php echo $dato; ?></div>
         </div>
 
         <?php
