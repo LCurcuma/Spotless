@@ -42,9 +42,10 @@ $historyEntries = $db->sql($sql);
 </div>
 
 <div class="logo">
-    <img src="img/logo.png" class="logoimg" alt="Logo">
+    <a href="index.php">
+        <img src="img/logo.png" class="logoimg" alt="Logo">
+    </a>
 </div>
-
 
 <div class="container px-5 ">
 
