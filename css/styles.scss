@@ -271,6 +271,7 @@ span{
   margin-right: 20px;
   font-family: 'Roboto', sans-serif;
   z-index: 100;
+  font-weight: bold;
 
   @include media-breakpoint-up(sm){
     font-size: 20px;
@@ -479,6 +480,128 @@ span{
   }
 }
 
+.cleaning-overview{
+  width: 80%;
+  margin: auto;
+  margin-top: 525px;
+  color: white;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+
+  @include media-breakpoint-up(sm){
+    margin-top: 525px; }
+  @include media-breakpoint-up(md){
+    margin-top: 525px; }
+  @include media-breakpoint-up(mg){
+    margin-top: 520px; }
+  @include media-breakpoint-up(lg){
+    margin-top: 580px; }
+}
+
+.cleaning-overview h2{
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.4rem;
+
+  @include media-breakpoint-up(md) { font-size: 1.8rem; }
+}
+
+
+.clean-row{
+  width: 100%;
+  max-width: 500px; // Juster så det passer med din klasses bredde
+  margin: 20px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+
+  @include media-breakpoint-up(sm) { max-width: 500px; }
+  @include media-breakpoint-up(md) { max-width: 650px; }
+}
+
+.history-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-item{
+  background-color:$primary;
+  border-radius: 12px;
+  padding: 10px 20px;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+span{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+
+  @include media-breakpoint-up(md){
+    font-size: 1.2rem;}
+}
+
+.history-time{
+  width: 50px;
+  text-align: left;
+  color: white;
+  margin-left: -2px;
+  font-weight: bold;
+}
+
+.history-name{
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.history-date{
+  width: 50px;
+  text-align: right;
+  color: white;
+  font-weight: bold;
+}
+
+.history-btn{
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 35px;
+  background: $primary;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-left:305px;
+
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+
+  @include media-breakpoint-up(sm){
+    margin-left: 225px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.3rem;
+    padding: 12px 50px;
+    margin-left: 305px;
+  }
+
+  @include media-breakpoint-up(mg){
+  margin-left: 335px;}
+
+  @include media-breakpoint-up(lg){
+    margin-left: 400px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    color: white;
+  }
+}
 
 .userIcon{
   position: absolute;
