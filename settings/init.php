@@ -36,7 +36,7 @@ define("CONFIG_LIVE", "0"); // 0: Test enviroment || 1: Live enviroment
 
 if(CONFIG_LIVE == 0) {
     $DB_SERVER = "mariadb";
-    $DB_NAME = "Spotless_Db";
+    $DB_NAME = "Spotless_db";
     $DB_USER = "user";
     $DB_PASS = "password";
 } else if(CONFIG_LIVE == 1) {
