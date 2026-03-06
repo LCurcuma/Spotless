@@ -634,13 +634,14 @@ span{
 }
 
 .userIcon{
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   font-size: 40px;
   opacity: 10%;
   z-index: 100;
   cursor: pointer;
+
 }
 
 .toiletrengjort{
