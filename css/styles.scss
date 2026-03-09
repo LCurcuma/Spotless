@@ -182,7 +182,7 @@ body {
   @include media-breakpoint-up(sm) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 450px; // Her begynder vi at låse bredden
+    max-width: 450px;
   }
 
   @include media-breakpoint-up(md) {
@@ -226,7 +226,7 @@ body {
 }
 
 .modal-body i{
-  color: #051933;
+  color: $black;
 
   @include media-breakpoint-up(sm){
     padding: 20px 40px 50px 40px;
@@ -234,7 +234,7 @@ body {
 }
 
 .contact-row{
-  color: #051933;
+  color: $black;
 
   @include media-breakpoint-up(sm){
     margin-bottom: 25px;
@@ -242,22 +242,16 @@ body {
 }
 
 i{
-  color: #051933;
-  font-size: 2.5rem;
+  color: $black;
 
-  @include media-breakpoint-up(sm){
-    font-size: 2.5rem;
-  }
 }
 
 span{
-  color: #051933;
-  font-size: 1.2rem;
+  color: $black;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
 
   @include media-breakpoint-up(sm){
-    font-size: 1.2rem;
     margin-left: 25px;
   }
 }
@@ -273,7 +267,6 @@ span{
   //margin-right: 20px;
   font-family: 'Roboto', sans-serif;
   z-index: 100;
-  font-weight: bold;
 
   @include media-breakpoint-up(sm){
     font-size: 20px;
@@ -532,7 +525,7 @@ span{
 
 .clean-row{
   width: 100%;
-  max-width: 500px; // Juster så det passer med din klasses bredde
+  max-width: 500px; 
   margin: 20px auto;
   padding: 0 20px;
   position: relative;
@@ -572,13 +565,11 @@ span{
   text-align: left;
   color: white;
   margin-left: -2px;
-  font-weight: bold;
 }
 
 .history-name{
   flex-grow: 1;
   text-align: center;
-  font-weight: bold;
   color: white;
 }
 
@@ -586,7 +577,6 @@ span{
   width: 50px;
   text-align: right;
   color: white;
-  font-weight: bold;
 }
 
 .link_btn{
@@ -598,14 +588,12 @@ span{
   display: block;
   margin-top: 25px;
   padding: 15px 35px;
-  background: $primary;
-  color: white;
+  background: $white;
+  color: $black;
   border-radius: 30px;
   text-decoration: none;
   /*margin-left:305px;*/
   text-align: center;
-
-  font-weight: bold;
   font-size: 1.1rem;
   transition: transform 0.2s ease;
 
