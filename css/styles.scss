@@ -308,7 +308,7 @@ span{
 //----------------------
 //Custom bootstrap kode
 .mt-150{
-  margin-top: 150px;
+  margin-top: 110px;
 }
 
 .fs-23{
@@ -636,13 +636,14 @@ span{
 }
 
 .userIcon{
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   right: 10px;
   font-size: 40px;
   opacity: 10%;
   z-index: 100;
   cursor: pointer;
+
 }
 
 .toiletrengjort{
