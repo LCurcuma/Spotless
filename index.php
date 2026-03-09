@@ -59,11 +59,11 @@ $firstTime = date("H:i", strtotime($firstDate));
 
             <div class="modal-body text-start p-4">
                 <div class="mb-4">
-                    <i class="bi bi-telephone fs-2 fw-bold"></i> <span class="ms-3 fw-bold">+45 01020304</span>
+                    <i class="bi bi-telephone fs-2"></i> <span class="ms-3">+45 01020304</span>
                 </div>
                 <div>
-                    <i class="bi bi-envelope fs-2 fw-bold"></i>
-                    <span class="ms-3 fw-bold">kontakt@zealand.dk</span>
+                    <i class="bi bi-envelope fs-2"></i>
+                    <span class="ms-3">kontakt@zealand.dk</span>
                 </div>
             </div>
 
