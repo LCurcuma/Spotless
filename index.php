@@ -102,34 +102,92 @@ $firstTime = date("H:i", strtotime($firstDate));
         </div>
     </div>
 
+
+<!-- Opretter en formular. Formularen sender data til filen index.php, når brugeren trykker på indsend.
+   method="post" betyder, at dataene sendes som POST-data. -->
     <form action="index.php" method="post">
+
+<!-- Der oprettes en Bootstrap modal, som er et popup-vindue. Klassen modal fade giver popup-vinduet en animation,
+når det åbner, id="insertForm" bruges til at identificere denne modal og attributterne aria-hidden og aria-labelledby bruges
+til tilgængelighed, så skærmlæsere kan forstå elementet.-->
         <div class="modal fade" id="insertForm" aria-hidden="true" aria-labelledby="insertForm" tabindex="-1">
+
+<!-- Her oprettes selve dialogboksen inde i modalen. Klassen modal-dialog-centered gør, at popup-vinduet bliver centreret
+på skærmen.-->
             <div class="modal-dialog modal-dialog-centered">
+
+<!--Her starter indholdet af popup-vinduet. Klassen modal-content er en Bootstrap-klasse, der styrer layoutet, og custom-modal
+er en klasse, som bruges til styling i CSS.-->
                 <div class="modal-content custom-modal">
+
+<!-- Opretter toppen af popup-vinduet-->
                     <div class="modal-header">
+
+<!-- Opretter en luk-knap i popup-vinduet. Klassen btn-close giver knappen et kryds-ikon. data-bs-dismiss="modal" gør,
+at modalen bliver lukket, når brugeren klikker på knappen.-->
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
+<!-- Selve indholdet af popup-vinduet-->
                     <div class="modal-body">
+
+<!-- Opretter en container omkring inputfelt. Klassen mb-3 giver en margin under elementet, så der er afstand til næste felt.-->
                         <div class="mb-3">
+
+<!-- Opretter en tekst, der beskriver inputfeltet. for="medarbejder" kobler labelen til inputfeltet med samme id. Klasserne fs-6
+og fs-md-4 styrer tekstens størrelse i Bootstrap.-->
                             <label for="medarbejder" class="fs-6 fs-md-4">Medarbejder</label>
+
+<!-- Opretter et tekstfelt, hvor brugeren kan skrive et medarbejdernavn. Klassen form-control giver Bootstrap-styling.
+id="medarbejder" bruges til at forbinde feltet med labelen. name="medarbejder" er vigtigt, fordi det er dette navn,
+PHP bruger til at hente værdien fra formularen. value="Maria Hansen" betyder, at feltet allerede er udfyldt med navnet Maria Hansen.-->
                             <input type="text" class="form-control fs-6 fs-md-4" id="medarbejder" name="medarbejder" value="Maria Hansen">
                         </div>
+
+<!-- Opretter en container med flexbox-layout. Klassen d-flex aktiverer flexbox, og flex-row gør, at elementerne ligger ved
+siden af hinanden vandret.-->
                         <div class="mb-3 d-flex flex-row">
+
+<!-- Opretter en container omkring et inputfelt. Klassen mb-3 giver en margin under elementet, så der er afstand til næste felt.-->
                             <div class="mb-3">
+
+<!-- Opretter en label til dato-feltet-->
                                 <label for="date" class="fs-6 fs-md-4">Date</label>
+
+<!-- Opretter et inputfelt til dato. type="date" giver en kalender. name="date" gør, at værdien kan sendes til PHP. value="-->
+<?php //echo $today; ?><!--" betyder, at feltet automatisk bliver udfyldt med dagens dato fra PHP-variablen $today.-->
                                 <input type="date" class="form-control tidspunkt fs-6 fs-md-4" id="date" name="date" value="<?php echo $today; ?>">
                             </div>
+
+<!-- Opretter en container omkring et inputfelt. Klassen mb-3 giver en margin under elementet, så der er afstand til næste felt.
+Klassen ms-auto giver automatisk selv margin til venstre (start), og skubber elementet helt til højre-->
                             <div class="mb-3 ms-auto">
+
+<!-- Opretter en label til tid-feltet-->
                                 <label for="tidspunkt" class="fs-6 fs-md-4">Tidspunkt</label>
+
+<!-- Opretter et inputfelt til tidspunkt. type="time" giver et tidsvælger-felt. name="tidspunkt" bruges til at sende værdien til
+PHP. value="--><?php //echo $timeNow; ?><!--" indsætter automatisk det aktuelle klokkeslæt fra PHP-variablen $timeNow.-->
                                 <input type="time" class="form-control tidspunkt fs-6 fs-md-4" id="tidspunkt" name="tidspunkt" value="<?php echo $timeNow; ?>">
                             </div>
                         </div>
+
+<!-- Opretter en container omkring et inputfelt. Klassen mb-3 giver en margin under elementet, så der er afstand til næste felt.-->
                         <div class="mb-3">
+
+<!-- Opretter en label til feltet, hvor brugeren kan skrive ekstra kommentarer.-->
                             <label for="andet" class="fs-6 fs-md-4">Evt. bemærkninger</label>
+
+<!-- Opretter et tekstfelt, hvor brugeren kan skrive bemærkninger. name="andet" gør, at PHP kan hente teksten fra formularen.-->
                             <input type="text" class="form-control fs-6 fs-md-4" id="andet" name="andet">
                         </div>
                     </div>
+
+<!-- Opretter footer (bunden) til modal-->
                     <div class="modal-footer">
+
+<!-- Opretter en knap til at indsende formularen. Klassen btn btn-primary giver Bootstrap-styling. data-bs-dismiss="modal" betyder,
+ at popup-vinduet lukkes, når knappen trykkes.-->
                         <button class="btn btn-primary submitBTN" data-bs-target="#inertForm" data-bs-dismiss="modal" id="saveCleanBtn">INDSEND</button>
                     </div>
                 </div>
@@ -137,26 +195,58 @@ $firstTime = date("H:i", strtotime($firstDate));
         </div>
     </form>
 
+<!-- Starter PHP-koden.-->
     <?php
+
+// Opretter en SQL-forespørgsel, der henter alle rækker fra databasen i tabellen Workers.
         $sqlWorkers = "SELECT * FROM Workers";
+
+// Sender SQL-forespørgslen til databasen og gemmer resultatet i variablen $workers.
         $workers = $db->sql($sqlWorkers);
 
+// Her bliver der tjekket, om formularen er blevet sendt. If (hvis) $_POST indeholder data, betyder det, at brugeren har
+// trykket på indsend.
         if(!empty($_POST)){
+
+// Opretter en SQL-kommando, som indsætter data i tabellen History. Den bruger placeholders (:workerId, :toiletId osv.),
+// som senere bliver erstattet med rigtige værdier.
             $sqlInsert = "INSERT INTO History (workerId, toiletId, date, remarks) VALUES (:workerId, :toiletId, :date, :remarks)";
+
+// Opretter en variabel til medarbejderens ID og sætter den først til null.
             $workerID = null;
 
+// Gennemgår alle medarbejdere, der blev hentet fra databasen.
             foreach($workers as $worker){
+
+// Sammenligner navnet fra databasen med det navn, brugeren skrev i formularen.
                 if($worker->name===$_POST['medarbejder']){
+
+// Hvis navnet passer, bliver medarbejderens ID gemt i variablen $workerID.
                     $workerID = $worker->id;
                 }
             }
+
+// Opretter et array med værdier, der skal indsættes i SQL-forespørgslen.
             $bindsInsert = [
+
+// Sætter værdien af workerId til medarbejderens ID.
                     ":workerId" => $workerID,
+
+// Sætter toilet-ID til værdien 2.
                 ":toiletId" => "2",
+
+// Kombinerer dato og tidspunkt fra formularen til én samlet værdi.
                 ":date" => $_POST['date']." ".$_POST['tidspunkt'],
+
+// Gemmer bemærkningerne fra formularen.
                 ":remarks" => $_POST['andet']
             ];
+
+// Sender SQL-kommandoen til databasen og indsætter dataene.
             $db->sql($sqlInsert, $bindsInsert);
+
+// Gør så der bliver vist en besked på siden, der fortæller brugeren, at registreringen er blevet gemt. Den indeholder også en knap,
+// som sender brugeren tilbage til index.php.
             echo "<div class='bg-light d-flex flex-column justify-content-center align-items-center goodJob'><p>Godt arbejde!</p><a href='index.php' class='btn btn-primary takBTN'>Tak :)</a></div>";
         }
     ?>
