@@ -511,6 +511,7 @@ span{
   text-align: center;
   font-family: 'Roboto', sans-serif;
 
+
   @include media-breakpoint-up(sm){
     margin-top: 525px; }
   @include media-breakpoint-up(md){
@@ -546,6 +547,7 @@ span{
   display: flex;
   flex-direction: column;
   gap: 10px;
+
 }
 
 .history-item{
