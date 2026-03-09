@@ -70,12 +70,12 @@ $historyEntries = $db->sql($sql);
         $dato = date("d.m", strtotime($entry->date));
         ?>
 
-        <div class="d-flex flex-row justify-space-between align-items-center text-white bg-primary rounded-3 p-3 mb-3 fs-2 w-100" >
+        <div class="d-flex flex-row text-center justify-content-between align-items-center text-white bg-primary rounded-3 p-3 mb-3 fs-2 w-100" >
             <!-- Viser tidspunkt -->
             <div class="ps-2">Kl: <?php echo $tid; ?></div>
 
             <!-- Viser medarbejderens navn -->
-            <div class="flex-grow-1 px-5"><?php echo $entry->name; ?></div>
+            <div class="pe-5" ><?php echo $entry->name; ?></div>
 
             <!-- Viser dato -->
             <div class="pe-2"><?php echo $dato; ?></div>
