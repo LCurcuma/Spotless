@@ -16,6 +16,9 @@ $history = $db->sql($sqlHistory);
 $firstDate = $history[0]->date;
 $firstDato = date("d.m.Y", strtotime($firstDate));
 $firstTime = date("H:i", strtotime($firstDate));
+
+$sqlWorkers = "SELECT * FROM Workers";
+$workers = $db->sql($sqlWorkers);
 ?>
 <!DOCTYPE html>
 <html lang="da">
@@ -111,8 +114,13 @@ $firstTime = date("H:i", strtotime($firstDate));
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="medarbejder" class="fs-6 fs-md-4">Medarbejder</label>
-                            <input type="text" class="form-control fs-6 fs-md-4" id="medarbejder" name="medarbejder" value="Maria Hansen">
+                            <label for="medarbejder" class="fs-6 fs-md-4">Medarbejder</label> <br/>
+                            <!--<input type="text" class="form-control fs-6 fs-md-4" id="medarbejder" name="medarbejder" value="Maria Hansen">-->
+                            <select name="medarbejder" id="medarbejder" class="form-control">
+                                <?php foreach($workers as $worker){?>
+                                    <option value="<?php echo $worker->name?>"><?php echo $worker->name?></option>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="mb-3 d-flex flex-row">
                             <div class="mb-3">
@@ -138,8 +146,7 @@ $firstTime = date("H:i", strtotime($firstDate));
     </form>
 
     <?php
-        $sqlWorkers = "SELECT * FROM Workers";
-        $workers = $db->sql($sqlWorkers);
+
 
         if(!empty($_POST)){
             $sqlInsert = "INSERT INTO History (workerId, toiletId, date, remarks) VALUES (:workerId, :toiletId, :date, :remarks)";
