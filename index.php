@@ -31,7 +31,7 @@ $workers = $db->sql($sqlWorkers);
     
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <meta name="copyright" content="Information om copyright">
 
     <link href="css/styles.css" rel="stylesheet" type="text/css">
